@@ -15,6 +15,11 @@ Darija (Moroccan dialect which is a mixture of languages that includes Arabic, A
 - **Model**: The script counts how often each word follows each other word (bigrams) and how often each word appears overall (unigrams). Predicting the next word means looking up which words followed the input word most often in the data, and returning the top 3.
 - **Fallback**: If the input word never appeared in the training data, the model falls back to the most common words overall, so it always returns something instead of failing.
 This is a Maximum Likelihood Estimation (MLE) bigram model  the standard first approach to statistical language modeling, predating and much simpler than neural approaches. It has real limitations: it only looks one word back, and it can't handle input it's never seen.
+
+## Limitations
+ 
+- Only considers the immediately preceding word (no longer context)
+- Prediction quality depends entirely on how much relevant data is in `sentences.csv`
  
 ## Usage
  
@@ -24,10 +29,6 @@ python autocomplete.py
  
 Enter a Darija word (e.g. `wach`, `salam`, `khouya`) and the script prints the three most likely next words based on the training data.
  
-## Limitations
- 
-- Only considers the immediately preceding word (no longer context)
-- Prediction quality depends entirely on how much relevant data is in `sentences.csv`
 
 ## Sample Output
 
