@@ -10,7 +10,7 @@ Darija (Moroccan dialect which is a mixture of languages that includes Arabic, A
  
 ## How it works
  
-- **Data**: Sentences come from [DODa]([https://github.com](https://github.com/darija-open-dataset/dataset)) (Darija Open Dataset), using the Arabizi (Latin-script) column.
+- **Data**: Sentences come from  [DODa](https://github.com/darija-open-dataset/dataset) (Darija Open Dataset), using the Arabizi (Latin-script) column.
 - **Tokenization**: Text is lowercased and split into words using regex, stripping punctuation.
 - **Model**: The script counts how often each word follows each other word (bigrams) and how often each word appears overall (unigrams). Predicting the next word means looking up which words followed the input word most often in the data, and returning the top 3.
 - **Fallback**: If the input word never appeared in the training data, the model falls back to the most common words overall, so it always returns something instead of failing.
