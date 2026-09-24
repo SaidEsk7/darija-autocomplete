@@ -42,6 +42,34 @@ To prevent the model from crashing or returning a zero-probability collapse when
 encountering an unseen word, I implemented a Backoff Algorithm. If the conditional probability of a bigram is zero, the model
 "backs off" to the unigram distribution, dynamicallyoffering the highest-frequency individual words in the dataset as a fallback safety net.
 
+## The Corpus & Dataset Provenance
+A major challenge in processing Darija is the lack of structured data. This model is trained on a subset of the **Darija Open Dataset (DODa)**, a collaborative open-source project dedicated to Moroccan dialect translation.
+
+*   **Source Data:** Extracted from the DODa `sentences.csv` file.
+*   **Size:** 48,839 human-validated conversational sentences.
+*   **Preprocessing:** The script isolates the Latin-script (Arabizi) column, utilizing regular expressions (`re`) to strip punctuation, normalize casing, and isolate valid alphanumeric tokens into a clean training corpus.
+
+## Sample Output
+The interactive terminal engine provides real-time, mathematically ranked suggestions. Here is an example of the model's standard output during a live session:
+
+```text
+Loading dataset...
+Successfully loaded 48839 sentences.
+
+Training N-gram model with Backoff smoothing...
+
+--- Darija Autocomplete Engine ---
+Type a word: khouya
+Top suggestions for 'khouya':
+ -> sghir (seen 2 times)
+ -> labas (seen 1 times)
+
+Type a word: wach
+Top suggestions for 'wach':
+ -> nta (seen 14 times)
+ -> mcha (seen 8 times)
+ -> kayna (seen 5 times)
+
 ## Usage
 1. Clone the repository.
 2. Ensure you have the `sentences.csv` dataset in the root directory.
