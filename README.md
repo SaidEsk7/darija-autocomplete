@@ -1,4 +1,4 @@
-Darija Autocomplete - Bigram Language Model
+### Darija Autocomplete - Bigram Language Model
  
 A word-prediction tool for Moroccan Darija, built  in Python. Given a word, it predicts the most likely next word using a bigram statistical language model I didn't use any NLP libraries, just the standard library.
  
