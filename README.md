@@ -1,4 +1,4 @@
-# Darija Autocomplete - Bigram Language Model
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8158dce9-5ec7-47b7-b0f3-2a81c1152c02" /># Darija Autocomplete - Bigram Language Model
  
 A word-prediction tool for Moroccan Darija, built  in Python. Given a word, it predicts the most likely next word using a bigram statistical language model I didn't use any NLP libraries, just the standard library.
  
@@ -6,7 +6,7 @@ A word-prediction tool for Moroccan Darija, built  in Python. Given a word, it p
  
 This started as a follow-up to my CS50P final project, a lexical analyzer that tokenized text and counted word frequencies. This project takes that same idea further: instead of just counting words, it models which words tend to follow which, and uses that to predict what comes next.
  
-Darija (Moroccan dialect which is a mixture of languages that includes Arabic, Amazigh , French , Spanish and Portuguese)  is a good test case for this kind of project because it doesn't have standardized spelling and is usually written in a mix of Latin script and numerals (Arabizi) rather than Arabic script. That makes it messier to work with than English, but also more realistic as an NLP problem.
+"Darija" or Moroccan Arabic  which is a mixture of languages that includes Arabic, Amazigh , French , Spanish and Portuguese ( You can learn more here [Darija-Moroccan Arabi Wikipedia ](https://en.wikipedia.org/wiki/Moroccan_Arabic) ) is a good test case for this kind of project because it doesn't have standardized spelling and is usually written in a mix of Latin script and numerals (Arabizi) rather than Arabic script. That makes it messier to work with than English, but also more realistic as an NLP problem.
  
 ## How it works
  
