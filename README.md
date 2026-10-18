@@ -16,7 +16,7 @@ This started as a follow-up to my CS50P final project, a lexical analyzer that t
 - **Fallback**: If the input word never appeared in the training data, the model falls back to the most common words overall, so it always returns something instead of failing.
 This is a Maximum Likelihood Estimation (MLE) bigram model  the standard first approach to statistical language modeling, predating and much simpler than neural approaches. It has real limitations: it only looks one word back, and it can't handle input it's never seen.
 
-### The probability behind it
+## The probability behind it
  
 The model estimates how likely a word is to follow the previous one by counting:
  
