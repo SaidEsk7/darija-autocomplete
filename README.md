@@ -16,6 +16,29 @@ This started as a follow-up to my CS50P final project, a lexical analyzer that t
 - **Fallback**: If the input word never appeared in the training data, the model falls back to the most common words overall, so it always returns something instead of failing.
 This is a Maximum Likelihood Estimation (MLE) bigram model  the standard first approach to statistical language modeling, predating and much simpler than neural approaches. It has real limitations: it only looks one word back, and it can't handle input it's never seen.
 
+### The probability behind it
+ 
+The model estimates how likely a word is to follow the previous one by counting:
+ 
+$$
+P(w_i \mid w_{i-1}) = \frac{\text{count}(w_{i-1}, w_i)}{\text{count}(w_{i-1})}
+$$
+ 
+- `count(w_{i-1}, w_i)` is how many times the pair appears in the training sentences.
+- `count(w_{i-1})` is how many times the first word appears in total.
+For example, if `wach` appears 10 times and is followed by `nta` 4 times, then P(`nta` | `wach`) = 4 / 10 = 0.4. (These numbers are only an illustration, not the real counts from the dataset.)
+ 
+To predict the next word, the model ranks every word seen after the input word by this probability and returns the top 3.
+ 
+If the input word never appeared in the data, the pair count is zero and the formula can't be used. The model then falls back to the unigram probability, which ranks words by how often they appear overall:
+ 
+$$
+P(w) = \frac{\text{count}(w)}{N}
+$$
+ 
+where N is the total number of words in the training data.
+
+
 ## Limitations
  
 - Only considers the immediately preceding word (no longer context)
